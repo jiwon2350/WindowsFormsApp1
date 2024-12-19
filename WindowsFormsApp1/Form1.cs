@@ -48,7 +48,8 @@ namespace WindowsFormsApp1
             #endregion
             string Sentence = "멈추지 않는 한 얼마나 천천히 가는지는 중요하지 않다. -공자";
 
-      // 1.indexOf()또는 LastIndexOf()를 사용해 특수문자를 검색하고, SubString() 또는
+            #region
+            // 1.indexOf()또는 LastIndexOf()를 사용해 특수문자를 검색하고, SubString() 또는
             //   Remove()를 사용해 "-공자" 부분을 삭제 
 
             // 문장에서 -공자 찾기
@@ -114,15 +115,25 @@ namespace WindowsFormsApp1
             // 모든 공백 문자 . 로 바꾸기 
             string Sentence_Replace = Sentence_Remove_dot.Replace(" ", ",");
             textBox__print.Text += Sentence_Replace.ToString() + "\r\n";  // 
+            #endregion
+
+            //textBox__print.Text += array1.ToString + \r\n;
 
 
         }
-        
-        //MessageBox.show("안녕하세요");
-        private void textBox_print_TextChanged(object sender, EventArgs e)
+
+        float[] Add(int First_input ,int Second_input)// 함수 형태도 배열로 해줘야 반환됨
         {
-            textBox_print.Text = "이것은\r\n멀티라인\r\n스트박스\r\n인데요?";
-            
+
+            // Quotient = 몫
+            float Quotient = First_input / Second_input;
+            // remainder = 나머지 
+            float remainder = First_input % Second_input;
+
+            // 인덱스 두개짜리 배열 만들기 
+            float[] result = { Quotient, remainder };
+        
+            return result;
         }
         
     }
